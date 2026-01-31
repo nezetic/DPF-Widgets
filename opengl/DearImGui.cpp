@@ -123,6 +123,9 @@ struct ImGuiWidget<BaseWidget>::PrivateData {
                                        dejavusans_ttf_size,
                                        d_roundToIntPositive(fontSize * scaleFactor),
                                        &fc);
+        #if defined(IMGUI_HAS_TEXTURES)
+        io.BackendFlags |= ImGuiBackendFlags_RendererHasTextures;
+        #endif
         io.Fonts->Build();
        #endif
 
